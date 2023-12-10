@@ -7,7 +7,7 @@ function HexCode({ code, color, backgroundColor='#FFFFFF'}) {
 }
 
 
-function App() {
+function Bmp() {
   const colors = ['#000000', '#FFFFFF', '#FF0000', '#00FF00', '#FFFF00', '#0000FF', '#FFA500', '#800080', '#FFC0CB'];
   const [grid, setGrid] = useState(Array(16).fill().map(() => Array(16).fill('#FFFFFF')));
   const [selectedColor, setSelectedColor] = useState('#FFFFFF');
@@ -78,4 +78,4 @@ function App() {
   );
 }
 
-export default App;
+export default Bmp;
