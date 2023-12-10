@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Lab, { LAB_APPS } from './lab/Lab';
+import Map from './Map';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -10,6 +11,7 @@ root.render(
   <React.StrictMode>
     <Router>  
       <Routes>
+        <Route path="/" element={<Map />} />
         {Object.entries(LAB_APPS).map(([key, app]) => (
           <Route key={key} path={app.path} element={<Lab currentApp={key} />} />
         ))}
