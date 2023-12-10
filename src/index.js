@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Bmp from './lab/bmp/Bmp';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Lab, { LAB_APPS } from './lab/Lab';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Bmp />
+    <Router>  
+      <Routes>
+        {Object.entries(LAB_APPS).map(([key, app]) => (
+          <Route key={key} path={app.path} element={<Lab currentApp={key} />} />
+        ))}
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
