@@ -1,6 +1,10 @@
 import React from 'react';
 
 const LAB_APPS = {
+  color: {
+    path: '/lab/color',
+    component: React.lazy(() => import('./color/Color')),
+  },
   bmp: {
     path: '/lab/bmp',
     component: React.lazy(() => import('./bmp/Bmp')),
